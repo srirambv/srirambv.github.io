@@ -1,1 +1,4 @@
-brave-ledger-verification=e33364f16bb5cbc4be4171239f5c913f4a643c33c92914b30124bcc431fe2f68
+This is a Brave Payments publisher verification file.
+
+Domain: srirambv.github.io 
+Token: 4b95823a5a8d11011d712c82c5c1da1d7bfd20d2c3ed40a72243640f5df0bb03
