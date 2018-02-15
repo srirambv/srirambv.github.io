@@ -1,0 +1,4 @@
+This is a Brave Payments publisher verification file.
+
+Domain: srirambv.github.io 
+Token: 070de2171a86994ed490af4107291543ba060a492a7ea954254d25d3d2d82a44
