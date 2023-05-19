@@ -1,27 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> 
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>GitHub Session Validation</title>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<title>GitHub Milestones</title>
 </head>
 <body>
-  <h1>GitHub Session Validation</h1>
-  <script>
-    axios.get('https://api.github.com/user')
-      .then(response => {
-        if (response.status === 200) {
-          // User is logged in
-          document.body.innerHTML += '<p>User is logged in</p>';
-        } else {
-          // User is not logged in
-          document.body.innerHTML += '<p>User is not logged in</p>';
-        }
-      })
-      .catch(error => {
-        // Error occurred
-        document.body.innerHTML += '<p>Error: ' + error.message + '</p>';
-      });
-  </script>
+
+<script src="https://cdn.jsdelivr.net/npm/github-api@4.4.1"></script>
+
+<script>
+// Check if user is authenticated via OAuth
+github.isAuthenticated(function(err, authenticated) {
+  if (authenticated) {
+    // Get milestones for repository
+    github.repo("brave", "brave-browser").milestone().listOpen(function(err, milestones) {
+      milestones.forEach(function(milestone) {
+        document.write("<h3>" + milestone.title + "</h3>");
+        document.write("Due date: " + milestone.due_on + "<br>");
+        document.write("Open issues: " + milestone.open_issues + "<br>");
+      });  
+    });
+  }
+}); 
+</script>
+
 </body>
 </html>
